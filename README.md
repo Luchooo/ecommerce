@@ -1,2 +1,1 @@
-# ecommerce
-Ecommerce with React
+# Ecommerce 🛒

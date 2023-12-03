@@ -18,10 +18,9 @@ export const Home = () => {
   };
 
   const renderProducts = () => {
-    const itemsToRender =
-      search?.length > 0 ? filteredItems : filterProducts(products);
+    const itemsToRender = search?.length > 0 ? filteredItems : products;
     if (itemsToRender?.length > 0) {
-      return itemsToRender.map((product) => (
+      return filterProducts(itemsToRender).map((product) => (
         <Product product={product} key={product.id} />
       ));
     } else {

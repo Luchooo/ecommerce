@@ -1,4 +1,4 @@
-import { ProductType } from "../types";
+import { ProductType } from "../types/Product";
 
 export const filterProducts = (products: ProductType[]): ProductType[] => {
   return products.filter((product) => {
@@ -6,11 +6,5 @@ export const filterProducts = (products: ProductType[]): ProductType[] => {
       product.category === "men's clothing" ||
       product.category === "women's clothing"
     );
-  });
-};
-
-export const filteredItemsByTitle = (items: ProductType[], title: string) => {
-  return items?.filter((item) => {
-    return item.title.toLowerCase().includes(title.toLowerCase());
   });
 };

@@ -1,26 +1,32 @@
-import { ReactNode, createContext, useEffect, useState } from "react";
-import { ProductContextType, ProductType } from "../types";
+import { ReactNode, createContext } from "react";
+import { ProductContextProps } from "../types/Product";
+import { useProductsData } from "../hooks/Products/useProductsData";
+import { useProductsFilter } from "../hooks/Products/useProductsFilter";
 
-export const ProductContext = createContext<ProductContextType>({
+export const ProductContext = createContext<ProductContextProps>({
   products: [],
-  setProducts: () => {},
+  loading: false,
+  error: false,
+  search: "",
+  handleSearch: () => {},
+  filteredItems: [],
 });
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
-  const [products, setProducts] = useState<ProductType[]>([]);
-
-  // fetch products
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const data = await response.json();
-      setProducts(data);
-    };
-    fetchProducts();
-  }, []);
+  const { error, loading, products } = useProductsData();
+  const { filteredItems, handleSearch, search } = useProductsFilter(products);
 
   return (
-    <ProductContext.Provider value={{ products, setProducts }}>
+    <ProductContext.Provider
+      value={{
+        products,
+        loading,
+        error,
+        search,
+        handleSearch,
+        filteredItems,
+      }}
+    >
       {children}
     </ProductContext.Provider>
   );

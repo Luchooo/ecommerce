@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../contexts/ProductContext";
 import { CartContext } from "../contexts/CartContext";
-import { ProductType } from "../types";
+import { ProductType } from "../types/Product";
 import ReactStars from "react-rating-star-with-type";
 
-export const ProductDetails = () => {
+export const ProductDetailsPage = () => {
   const { productId } = useParams();
   const parsedProductId = productId ? parseInt(productId) : undefined;
 

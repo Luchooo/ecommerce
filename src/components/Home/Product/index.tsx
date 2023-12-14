@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
-import { ProductType } from "../../types";
-import { CartContext } from "../../contexts/CartContext";
+import { ProductType } from "../../../types/Product";
+import { CartContext } from "../../../contexts/CartContext";
 import { BsEyeFill, BsPlus } from "react-icons/bs";
 import { useContext } from "react";
 
 export const Product = ({ product }: { product: ProductType }) => {
   const { id, image, category, title, price } = product;
-
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div>
+    <section>
       <div className="border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden transition group">
         <div className="w-full h-full flex justify-center items-center">
           <div className="w-[200px] mx-auto flex justify-center items-center">
@@ -42,6 +41,6 @@ export const Product = ({ product }: { product: ProductType }) => {
         </Link>
         <div className="font-semibold">${price}</div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -1,8 +1,7 @@
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ErrorPage } from "./pages/ErrorPage.tsx";
-import { Home } from "./pages/Home.tsx";
-import { ProductDetails } from "./pages/ProductDetails.tsx";
+import { HomePage } from "./pages/HomePage.tsx";
+import { ProductDetailsPage } from "./pages/ProductDetailsPage.tsx";
 import { Header } from "./components/Header/index.tsx";
 import { Footer } from "./components/Footer/index.tsx";
 import { Sidebar } from "./components/Sidebar/index.tsx";
@@ -18,8 +17,11 @@ function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products/:productId" element={<ProductDetails />} />
+              <Route path="/" element={<HomePage />} />
+              <Route
+                path="/products/:productId"
+                element={<ProductDetailsPage />}
+              />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
             <Sidebar />

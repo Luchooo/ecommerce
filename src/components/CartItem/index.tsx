@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProductType } from "../../types";
+import { ProductType } from "../../types/Product";
 import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
 import { CartContext } from "../../contexts/CartContext";
 import { useContext } from "react";

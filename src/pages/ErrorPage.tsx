@@ -8,7 +8,6 @@ export const ErrorPage = () => {
         alt=""
         className="h-64 w-full object-cover"
       />
-
       <div className="flex flex-1 items-center justify-center">
         <div className="mx-auto max-w-xl px-4 py-8 text-center">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">

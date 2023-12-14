@@ -1,8 +1,8 @@
+import { CartContext } from "@my-contexts/CartContext";
+import { SidebarContext } from "@my-contexts/SidebarContext";
 import { useContext } from "react";
-import { SidebarContext } from "../../contexts/SidebarContext";
-import { CartContext } from "../../contexts/CartContext";
-import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
+import { IoMdArrowForward } from "react-icons/io";
 import { CartItem } from "../CartItem";
 
 export const Sidebar = () => {

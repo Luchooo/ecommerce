@@ -1,7 +1,7 @@
+import { useProductsData } from "@my-hooks/Products/useProductsData";
+import { useProductsFilter } from "@my-hooks/Products/useProductsFilter";
+import { ProductContextProps } from "@my-types/Product";
 import { ReactNode, createContext } from "react";
-import { ProductContextProps } from "../types/Product";
-import { useProductsData } from "../hooks/Products/useProductsData";
-import { useProductsFilter } from "../hooks/Products/useProductsFilter";
 
 export const ProductContext = createContext<ProductContextProps>({
   products: [],

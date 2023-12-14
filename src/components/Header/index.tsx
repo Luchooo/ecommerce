@@ -1,6 +1,6 @@
+import { CartContext } from "@my-contexts/CartContext";
+import { SidebarContext } from "@my-contexts/SidebarContext";
 import { useContext, useEffect, useState } from "react";
-import { SidebarContext } from "../../contexts/SidebarContext";
-import { CartContext } from "../../contexts/CartContext";
 import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.svg";

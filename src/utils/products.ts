@@ -1,4 +1,4 @@
-import { ProductType } from "../types/Product";
+import { ProductType } from "@my-types/Product";
 
 export const filterProducts = (products: ProductType[]): ProductType[] => {
   return products.filter((product) => {

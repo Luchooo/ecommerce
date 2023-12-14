@@ -1,5 +1,5 @@
+import { ProductType } from "@my-types/Product";
 import { useEffect, useState } from "react";
-import { ProductType } from "../../types/Product";
 
 export const useProductsData = () => {
   const [products, setProducts] = useState<ProductType[]>([]);

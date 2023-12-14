@@ -1,4 +1,4 @@
-import { useProductsContext } from "../../hooks/Products/useProductsContext";
+import { useProductsContext } from "@my-hooks/Products/useProductsContext";
 
 export const SearchBar = () => {
   const { handleSearch, search } = useProductsContext();

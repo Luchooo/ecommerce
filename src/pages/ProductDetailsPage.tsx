@@ -1,9 +1,9 @@
+import { CartContext } from "@my-contexts/CartContext";
+import { ProductContext } from "@my-contexts/ProductContext";
+import { ProductType } from "@my-types/Product";
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
-import { ProductContext } from "../contexts/ProductContext";
-import { CartContext } from "../contexts/CartContext";
-import { ProductType } from "../types/Product";
 import ReactStars from "react-rating-star-with-type";
+import { useParams } from "react-router-dom";
 
 export const ProductDetailsPage = () => {
   const { productId } = useParams();

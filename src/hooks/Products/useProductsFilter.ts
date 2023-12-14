@@ -1,5 +1,5 @@
+import { ProductType } from "@my-types/Product";
 import { ChangeEvent, useMemo, useState } from "react";
-import { ProductType } from "../../types/Product";
 
 export const useProductsFilter = (products: ProductType[]) => {
   const [search, setSearch] = useState("");

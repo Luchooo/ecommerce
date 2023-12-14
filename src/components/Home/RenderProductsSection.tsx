@@ -1,4 +1,4 @@
-import { useProductsContext } from "../../hooks/Products/useProductsContext";
+import { useProductsContext } from "@my-hooks/Products/useProductsContext";
 import { filterProducts } from "../../utils/products";
 import { Product } from "./Product";
 

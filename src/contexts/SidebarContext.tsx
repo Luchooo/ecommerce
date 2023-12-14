@@ -1,5 +1,5 @@
+import { SidebarContextType } from "@my-types/Sidebar";
 import { ReactNode, createContext, useState } from "react";
-import { SidebarContextType } from "../types";
 
 export const SidebarContext = createContext<SidebarContextType>({
   isOpen: false,

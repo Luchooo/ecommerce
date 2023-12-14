@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { ProductType } from "../../types/Product";
-import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
-import { CartContext } from "../../contexts/CartContext";
+import { CartContext } from "@my-contexts/CartContext";
+import { ProductType } from "@my-types/Product";
 import { useContext } from "react";
+import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 export const CartItem = ({ product }: { product: ProductType }) => {
   const { id, title, image, price, amount } = product;

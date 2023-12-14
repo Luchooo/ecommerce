@@ -1,10 +1,4 @@
-import { ProductType } from "./Product";
-
-export type SidebarContextType = {
-  isOpen: boolean;
-  handleClose: () => void;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+import { ProductType } from "@my-types/Product";
 
 export type CartContextType = {
   cart: ProductType[];

@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { ProductType } from "../../../types/Product";
-import { CartContext } from "../../../contexts/CartContext";
-import { BsEyeFill, BsPlus } from "react-icons/bs";
+import { CartContext } from "@my-contexts/CartContext";
+import { ProductType } from "@my-types/Product";
 import { useContext } from "react";
+import { BsEyeFill, BsPlus } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const Product = ({ product }: { product: ProductType }) => {
   const { id, image, category, title, price } = product;

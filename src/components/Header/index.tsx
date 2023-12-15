@@ -1,12 +1,11 @@
-import { SidebarContext } from "@contexts";
-import { useCart } from "@hooks";
-import { useContext, useEffect, useState } from "react";
+import { useCart, useSidebar } from "@hooks";
+import { useEffect, useState } from "react";
 import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.svg";
 
 export const Header = () => {
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { isOpen, setIsOpen } = useSidebar();
   const { itemsAmount } = useCart();
   const [isActive, setIsActive] = useState(false);
 
@@ -22,14 +21,14 @@ export const Header = () => {
         isActive ? "bg-white py-4 shadow-md" : "bg-none py-6"
       } fixed w-full z-10 transition-all`}
     >
-      <div className="container mx-auto flex items-center justify-between h-full px-10">
+      <nav className="container mx-auto flex items-center justify-between h-full px-10">
         <Link to={"/"}>
           <div className="flex items-center min-w-[200px] gap-4">
             <img className="w-[40px]" src={Logo} alt="Logo Ecommerce" />
             <h1 className="text-2xl font-bold">FashionLab</h1>
           </div>
         </Link>
-        <div
+        <button
           className="cursor-pointer flex relative"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -37,8 +36,8 @@ export const Header = () => {
           <div className="bg-red-500 absolute -right-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
             {itemsAmount}
           </div>
-        </div>
-      </div>
+        </button>
+      </nav>
     </header>
   );
 };

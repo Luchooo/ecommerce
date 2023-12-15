@@ -7,3 +7,6 @@ export { FooterProduct } from "./Home/Product/FooterProduct";
 export { RenderProductsSection } from "./Home/RenderProductsSection";
 export { SearchBar } from "./Home/SearchBar";
 export { Sidebar } from "./Sidebar";
+export { BodySidebar } from "./Sidebar/BodySidebar";
+export { FooterSidebar } from "./Sidebar/FooterSidebar";
+export { HeaderSidebar } from "./Sidebar/HeaderSidebar";

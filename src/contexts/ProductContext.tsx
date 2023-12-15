@@ -4,23 +4,21 @@ import { ReactNode, createContext } from "react";
 
 export const ProductContext = createContext<ProductContextProps>({
   products: [],
-  loading: false,
-  error: false,
+  status: "idle",
   search: "",
   handleSearch: () => {},
   filteredItems: [],
 });
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
-  const { error, loading, products } = useProductsData();
+  const { status, products } = useProductsData();
   const { filteredItems, handleSearch, search } = useProductsFilter(products);
 
   return (
     <ProductContext.Provider
       value={{
         products,
-        loading,
-        error,
+        status,
         search,
         handleSearch,
         filteredItems,

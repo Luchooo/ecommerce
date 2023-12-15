@@ -1,4 +1,7 @@
 export { CartItem } from "./CartItem";
+export { ProductDetails } from "./DetailsProduct/ProductDetails";
+export { ProductImage } from "./DetailsProduct/ProductImage";
+export { ProductNotFound } from "./DetailsProduct/ProductNotFound";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
 export { LoaderProducts } from "./Home/LoaderProducts";

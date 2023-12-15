@@ -1,61 +1,25 @@
-import { useCart, useProducts } from "@hooks";
-import ReactStars from "react-rating-star-with-type";
+import { ProductDetails, ProductImage, ProductNotFound } from "@components";
+import { useProducts } from "@hooks";
 import { useParams } from "react-router-dom";
 
 export const ProductDetailsPage = () => {
   const { productId } = useParams();
   const { products } = useProducts();
-  const { addToCart } = useCart();
-  const parsedProductId = productId && parseInt(productId);
+  const parsedProductId = parseInt(productId ?? "0", 10);
   const product = products.find((item) => item.id === parsedProductId);
 
   if (!product) {
-    return (
-      <section className="h-screen flex justify-center items-center font-medium text-2xl">
-        Loading...
-      </section>
-    );
+    return <ProductNotFound />;
   }
-  const {
-    title,
-    price,
-    description,
-    image,
-    rating = { rate: 0, count: 0 },
-  } = product;
+  const { title, image } = product;
 
   return (
-    <section className="pt-32 pb-12 lg:py-32 h-screen flex items-center">
+    <section className="pt-32 pb-12 lg:py-32 lg:h-screen flex items-center">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row items-center">
-          <div className="flex flex-1 justify-center items-center mb-8 lg:mb-0">
-            <img
-              className="max-w-[200px] lg:max-w-sm"
-              src={image}
-              alt={title}
-            />
-          </div>
-          <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
-              {title}
-            </h1>
-            <div className="flex justify-center lg:justify-start my-4 gap-x-4">
-              <div className="text-xl text-red-500 font-medium">$ {price}</div>
-
-              <div className="flex flex-col">
-                <ReactStars value={rating?.rate} activeColor="#000" />
-                <p>{rating?.count} Reviews</p>
-              </div>
-            </div>
-            <p className="mb-8 px-10 lg:px-0">{description}</p>
-            <button
-              onClick={() => addToCart(product)}
-              className="bg-black/80 py-4 px-8 text-white"
-            >
-              Add to cart
-            </button>
-          </div>
-        </div>
+        <article className="flex flex-col lg:flex-row items-center lg:mt-0 mt-4">
+          <ProductImage image={image} title={title} />
+          <ProductDetails product={product} />
+        </article>
       </div>
     </section>
   );

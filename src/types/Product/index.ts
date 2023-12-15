@@ -18,9 +18,13 @@ export type ProductType = {
 
 export type ProductContextProps = {
   products: ProductType[];
-  loading: boolean;
-  error: boolean;
+  status: string;
   search: string;
   handleSearch: (value: ChangeEvent<HTMLInputElement>) => void;
   filteredItems: ProductType[];
+};
+
+export type ProductImageProps = {
+  image: string;
+  title: string;
 };

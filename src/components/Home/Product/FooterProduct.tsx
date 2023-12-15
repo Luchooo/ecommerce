@@ -1,4 +1,4 @@
-import { ProductType } from "@my-types/Product";
+import { ProductType } from "@types";
 import { Link } from "react-router-dom";
 
 export const FooterProduct = ({ category, id, title, price }: ProductType) => {

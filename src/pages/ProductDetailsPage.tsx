@@ -1,20 +1,13 @@
-import { CartContext } from "@my-contexts/CartContext";
-import { ProductContext } from "@my-contexts/ProductContext";
-import { ProductType } from "@my-types/Product";
-import { useContext } from "react";
+import { useCart, useProducts } from "@hooks";
 import ReactStars from "react-rating-star-with-type";
 import { useParams } from "react-router-dom";
 
 export const ProductDetailsPage = () => {
   const { productId } = useParams();
-  const parsedProductId = productId ? parseInt(productId) : undefined;
-
-  const { products } = useContext(ProductContext);
-  const { addToCart } = useContext(CartContext);
-
-  const product = products.find((item: ProductType) => {
-    return item.id === parsedProductId;
-  });
+  const { products } = useProducts();
+  const { addToCart } = useCart();
+  const parsedProductId = productId && parseInt(productId);
+  const product = products.find((item) => item.id === parsedProductId);
 
   if (!product) {
     return (

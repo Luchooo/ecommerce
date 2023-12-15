@@ -1,10 +1,6 @@
-import { CartProvider } from "@my-contexts/CartContext.tsx";
-import { ProductProvider } from "@my-contexts/ProductContext.tsx";
-import { SidebarProvider } from "@my-contexts/SidebarContext.tsx";
+import { Footer, Header, Sidebar } from "@components";
+import { CartProvider, ProductProvider, SidebarProvider } from "@contexts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Footer } from "./components/Footer/index.tsx";
-import { Header } from "./components/Header/index.tsx";
-import { Sidebar } from "./components/Sidebar/index.tsx";
 import { ErrorPage } from "./pages/ErrorPage.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
 import { ProductDetailsPage } from "./pages/ProductDetailsPage.tsx";

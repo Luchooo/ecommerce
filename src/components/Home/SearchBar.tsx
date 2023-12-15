@@ -1,7 +1,7 @@
-import { useProductsContext } from "@my-hooks/Products/useProductsContext";
+import { useProducts } from "@hooks";
 
 export const SearchBar = () => {
-  const { handleSearch, search } = useProductsContext();
+  const { handleSearch, search } = useProducts();
 
   return (
     <div className="flex flex-col w-full mb-4 px-10 mt-6">

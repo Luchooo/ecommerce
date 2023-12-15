@@ -1,11 +1,10 @@
-import { CartContext } from "@my-contexts/CartContext";
-import { ProductType } from "@my-types/Product";
-import { useContext } from "react";
+import { useCart } from "@hooks";
+import { ProductType } from "@types";
 import { BsEyeFill, BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 export const BodyProduct = (product: ProductType) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCart();
   const { image, title, id } = product;
 
   const handleAddToCart = (product: ProductType): void => {

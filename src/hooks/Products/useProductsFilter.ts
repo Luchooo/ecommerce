@@ -1,4 +1,4 @@
-import { ProductType } from "@my-types/Product";
+import { ProductType } from "@types";
 import { ChangeEvent, useMemo, useState } from "react";
 
 export const useProductsFilter = (products: ProductType[]) => {

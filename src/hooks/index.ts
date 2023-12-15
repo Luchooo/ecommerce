@@ -4,3 +4,4 @@ export { useCartOperations } from "./Cart/useCartOperations";
 export { useProducts } from "./Products/useProducts";
 export { useProductsData } from "./Products/useProductsData";
 export { useProductsFilter } from "./Products/useProductsFilter";
+export { useSidebar } from "./Sidebar/useSidebar";

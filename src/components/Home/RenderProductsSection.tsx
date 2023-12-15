@@ -1,4 +1,4 @@
-import { Product } from "@components";
+import { LoaderProducts, Product } from "@components";
 import { useProducts } from "@hooks";
 import { filterProducts } from "@utils";
 
@@ -16,12 +16,16 @@ export const RenderProductsSection = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] mx-10">
-      {loading && <p className="mt-10 font-semibold">Loading products...</p>}
+    <>
+      {loading && <LoaderProducts />}
       {error && (
-        <p className="mt-10 font-semibold">Error getting products...</p>
+        <p className="flex items-center justify-center mt-10 font-semibold h-[calc(100vh-428px)] text-xl">
+          Error getting products...
+        </p>
       )}
-      {!loading && !error && renderProducts()}
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] mx-10">
+        {!loading && !error && renderProducts()}
+      </div>
+    </>
   );
 };

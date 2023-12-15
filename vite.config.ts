@@ -6,9 +6,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@my-types": "/src/types",
-      "@my-hooks": "/src/hooks",
-      "@my-contexts": "/src/contexts",
+      "@types": "/src/types",
+      "@hooks": "/src/hooks",
+      "@contexts": "/src/contexts",
+      "@utils": "/src/utils",
+      "@components": "/src/components",
     },
   },
 });

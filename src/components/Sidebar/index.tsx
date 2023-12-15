@@ -1,13 +1,13 @@
-import { CartContext } from "@my-contexts/CartContext";
-import { SidebarContext } from "@my-contexts/SidebarContext";
+import { CartItem } from "@components";
+import { SidebarContext } from "@contexts";
+import { useCart } from "@hooks";
 import { useContext } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import { IoMdArrowForward } from "react-icons/io";
-import { CartItem } from "../CartItem";
 
 export const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart, clearCart, itemsAmount, total } = useContext(CartContext);
+  const { cart, clearCart, itemsAmount, total } = useCart();
 
   return (
     <div

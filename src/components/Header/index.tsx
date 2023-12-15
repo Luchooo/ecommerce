@@ -1,5 +1,5 @@
-import { CartContext } from "@my-contexts/CartContext";
-import { SidebarContext } from "@my-contexts/SidebarContext";
+import { SidebarContext } from "@contexts";
+import { useCart } from "@hooks";
 import { useContext, useEffect, useState } from "react";
 import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import Logo from "../../assets/logo.svg";
 
 export const Header = () => {
   const { isOpen, setIsOpen } = useContext(SidebarContext);
-  const { itemsAmount } = useContext(CartContext);
+  const { itemsAmount } = useCart();
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {

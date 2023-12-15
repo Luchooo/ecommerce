@@ -7,9 +7,11 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "paths": {
-      "@my-types/*": ["types/*"],
-      "@my-hooks/*": ["hooks/*"],
-      "@my-contexts/*": ["contexts/*"]
+      "@types": ["types/index"],
+      "@hooks": ["hooks/index"],
+      "@contexts": ["contexts/index"],
+      "@utils": ["utils/index"],
+      "@components": ["components/index"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",

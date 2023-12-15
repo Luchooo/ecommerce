@@ -1,4 +1,5 @@
-import { ProductType } from "@my-types/Product";
+import { ProductType } from "@types";
+import { Dispatch, SetStateAction } from "react";
 
 export type CartContextType = {
   cart: ProductType[];
@@ -9,4 +10,10 @@ export type CartContextType = {
   decreaseAmount: (id: number) => void;
   itemsAmount: number;
   total: number;
+};
+
+export type CartEffectsProps = {
+  cart: ProductType[];
+  setTotal: Dispatch<SetStateAction<number>>;
+  setItemsAmount: Dispatch<SetStateAction<number>>;
 };

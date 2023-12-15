@@ -1,9 +1,9 @@
-import { useProductsContext } from "@my-hooks/Products/useProductsContext";
-import { filterProducts } from "../../utils/products";
-import { Product } from "./Product";
+import { Product } from "@components";
+import { useProducts } from "@hooks";
+import { filterProducts } from "@utils";
 
 export const RenderProductsSection = () => {
-  const { filteredItems, loading, error } = useProductsContext();
+  const { filteredItems, loading, error } = useProducts();
 
   const renderProducts = () => {
     if (!filteredItems || filteredItems.length === 0) {

@@ -1,5 +1,4 @@
-import { RenderProductsSection } from "../components/Home/RenderProductsSection";
-import { SearchBar } from "../components/Home/SearchBar";
+import { RenderProductsSection, SearchBar } from "@components";
 
 export const HomePage = () => {
   return (

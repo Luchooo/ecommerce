@@ -1,7 +1,7 @@
-import { ProductContext } from "@my-contexts/ProductContext";
+import { ProductContext } from "@contexts";
 import { useContext } from "react";
 
-export const useProductsContext = () => {
+export const useProducts = () => {
   const context = useContext(ProductContext);
   if (!context) {
     throw new Error("useProductsContext must be used within a ProductProvider");

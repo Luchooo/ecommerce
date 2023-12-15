@@ -1,9 +1,11 @@
 export { CartItem } from "./CartItem";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
+export { LoaderProducts } from "./Home/LoaderProducts";
 export { Product } from "./Home/Product/";
 export { BodyProduct } from "./Home/Product/BodyProduct";
 export { FooterProduct } from "./Home/Product/FooterProduct";
+export { LoaderProduct } from "./Home/Product/LoaderProduct";
 export { RenderProductsSection } from "./Home/RenderProductsSection";
 export { SearchBar } from "./Home/SearchBar";
 export { Sidebar } from "./Sidebar";

@@ -12,6 +12,7 @@ export default defineConfig({
       "@utils": "/src/utils",
       "@components": "/src/components",
       "@pages": "/src/pages",
+      "@constants": "/src/constants",
     },
   },
 });

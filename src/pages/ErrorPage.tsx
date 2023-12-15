@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const ErrorPage = () => {
   return (
-    <div className="flex h-screen flex-col bg-white">
+    <section className="flex h-screen flex-col bg-white">
       <img
         src="/img/not-found.webp"
         alt="Not found image"
@@ -25,6 +25,6 @@ export const ErrorPage = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

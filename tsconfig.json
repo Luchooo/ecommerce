@@ -12,7 +12,8 @@
       "@contexts": ["contexts/index"],
       "@utils": ["utils/index"],
       "@components": ["components/index"],
-      "@pages": ["pages/index"]
+      "@pages": ["pages/index"],
+      "@constants": ["constants/index"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",

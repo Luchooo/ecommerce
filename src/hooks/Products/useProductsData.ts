@@ -4,23 +4,22 @@ import { useEffect, useState } from "react";
 
 export const useProductsData = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [status, setStatus] = useState("idle");
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setStatus("loading");
       try {
         const response = await fetch(API_BASE_URL);
         const data: ProductType[] = await response.json();
         setProducts(data);
+        setStatus("success");
       } catch (error) {
-        setError(true);
-      } finally {
-        setLoading(false);
+        setStatus("error");
       }
     };
     fetchProducts();
   }, []);
 
-  return { products, loading, error };
+  return { products, status };
 };

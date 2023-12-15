@@ -3,7 +3,7 @@ import { useProducts } from "@hooks";
 import { filterProducts } from "@utils";
 
 export const RenderProductsSection = () => {
-  const { filteredItems, loading, error } = useProducts();
+  const { filteredItems, status } = useProducts();
 
   const renderProducts = () => {
     if (!filteredItems || filteredItems.length === 0) {
@@ -17,14 +17,14 @@ export const RenderProductsSection = () => {
 
   return (
     <>
-      {loading && <LoaderProducts />}
-      {error && (
+      {status === "loading" && <LoaderProducts />}
+      {status === "error" && (
         <p className="flex items-center justify-center mt-10 font-semibold h-[calc(100vh-428px)] text-xl">
           Error getting products...
         </p>
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] mx-10">
-        {!loading && !error && renderProducts()}
+        {status === "success" && renderProducts()}
       </div>
     </>
   );

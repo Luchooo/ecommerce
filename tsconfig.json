@@ -9,6 +9,7 @@
     "paths": {
       "@types": ["types/index"],
       "@hooks": ["hooks/index"],
+      "@reducers": ["reducers/index"],
       "@contexts": ["contexts/index"],
       "@utils": ["utils/index"],
       "@components": ["components/index"],

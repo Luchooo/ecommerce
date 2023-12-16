@@ -8,6 +8,7 @@ export default defineConfig({
     alias: {
       "@types": "/src/types",
       "@hooks": "/src/hooks",
+      "@reducers": "/src/reducers",
       "@contexts": "/src/contexts",
       "@utils": "/src/utils",
       "@components": "/src/components",

@@ -3,7 +3,7 @@ import { useCart, useProduct } from "@hooks";
 import { IoMdClose } from "react-icons/io";
 
 export const CartItemDetails = () => {
-  const { id } = useProduct();
+  const product = useProduct();
   const { removeFromCart } = useCart();
 
   return (
@@ -11,7 +11,7 @@ export const CartItemDetails = () => {
       <div className="flex justify-between mb-2">
         <CartItemTitle />
         <button
-          onClick={() => removeFromCart(id)}
+          onClick={() => removeFromCart(product)}
           className="text-xl cursor-pointer"
         >
           <IoMdClose className="text-gray-500 hover:text-red-500 transition" />

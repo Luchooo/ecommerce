@@ -1,6 +1,6 @@
-import { useCartOperations } from "@hooks";
+import { useCartEffects, useCartOperations } from "@hooks";
 import { CartContextType } from "@types";
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useState } from "react";
 
 export const CartContext = createContext<CartContextType>({
   cart: [],
@@ -14,10 +14,20 @@ export const CartContext = createContext<CartContextType>({
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
+  const [itemsAmount, setItemsAmount] = useState(0);
+  const [total, setTotal] = useState(0);
   const cartOperations = useCartOperations();
+  const { cart } = cartOperations;
+  useCartEffects({ cart, setTotal, setItemsAmount });
 
   return (
-    <CartContext.Provider value={cartOperations}>
+    <CartContext.Provider
+      value={{
+        ...cartOperations,
+        itemsAmount,
+        total,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

@@ -2,13 +2,14 @@ import { useCart, useProduct } from "@hooks";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 
 export const CartItemQuantity = () => {
-  const { id, amount } = useProduct();
+  const product = useProduct();
+  const { amount } = product;
   const { increaseAmount, decreaseAmount } = useCart();
 
   return (
     <div className="flex flex-1 max-w-[100px] items-center h-full border text-black/80 font-medium">
       <button
-        onClick={() => decreaseAmount(id)}
+        onClick={() => decreaseAmount(product)}
         className="flex-1 h-full flex justify-center items-center cursor-pointer"
       >
         <IoMdRemove />
@@ -17,7 +18,7 @@ export const CartItemQuantity = () => {
         {amount}
       </span>
       <button
-        onClick={() => increaseAmount(id)}
+        onClick={() => increaseAmount(product)}
         className="flex-1 h-full flex justify-center items-center cursor-pointer"
       >
         <IoMdAdd />

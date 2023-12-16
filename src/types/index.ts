@@ -1,4 +1,10 @@
-export type { CartContextType, CartEffectsProps } from "./Cart";
+export type {
+  CartAction,
+  CartContextType,
+  CartEffectsProps,
+  CartItemAmountProps,
+  CartOperationsType,
+} from "./Cart";
 export type { SocialIconType } from "./Footer";
 export type {
   ProductContextProps,

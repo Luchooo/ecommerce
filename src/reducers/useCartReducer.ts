@@ -1,7 +1,10 @@
 import { ActionTypes } from "@constants";
 import { CartAction, CartItemAmountProps, ProductType } from "@types";
+import { localStorage } from "@utils";
 
-export const initialState: ProductType[] = [];
+const { setItem, getItem, removeItem } = localStorage("cart");
+
+export const initialState = getItem<ProductType[]>() || [];
 
 const updateCartItemAmount = ({
   cartItem,
@@ -34,15 +37,19 @@ const addtoCart = (product: ProductType, state: ProductType[]) => {
       cartItem: newCart[existingItemIndex],
       operation: "increase",
     });
+    setItem<ProductType[]>(newCart);
     return newCart;
   } else {
     const newItem = { ...product, amount: 1 };
-    return [...state, newItem];
+    const newCart = [...state, newItem];
+    setItem<ProductType[]>(newCart);
+    return newCart;
   }
 };
 
 const removeFromCart = ({ id }: ProductType, state: ProductType[]) => {
   const newCart = state.filter((item) => item.id !== id);
+  setItem<ProductType[]>(newCart);
   return newCart;
 };
 
@@ -61,6 +68,7 @@ export const cartReducer = (
     }
 
     case ActionTypes.CLEAR_CART: {
+      removeItem();
       return [];
     }
 
@@ -87,6 +95,7 @@ export const cartReducer = (
             cartItem: newCart[existingItemIndex],
             operation: "decrease",
           });
+          setItem<ProductType[]>(newCart);
           return newCart;
         }
       } else {

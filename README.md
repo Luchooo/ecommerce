@@ -18,10 +18,10 @@ https://github.com/Luchooo/ecommerce/assets/6707442/bbb940a3-dbbd-4eab-9e74-a413
 &ensp;🛒Increase or decrease the quantity of products in the cart.  
 &ensp;🛒Remove products from the shopping cart.  
 &ensp;🛒View the total purchase amount in the cart.  
+&ensp;🛒Handle persistence with local storage.  
 🕗&ensp;(Missing)Add the Checkout Section.  
 🕗&ensp;(Missing)Add the Hero Section.  
 🕗&ensp;(Missing)Handle filters to category, rate and price.  
-🕗&ensp;(Missing)Handle persistence with local storage.  
 🕗&ensp;(Missing)Add test to the components.
 <br/>
 

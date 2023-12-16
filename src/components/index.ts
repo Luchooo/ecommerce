@@ -1,4 +1,9 @@
 export { CartItem } from "./CartItem";
+export { CartItemDetails } from "./CartItem/CartItemDetails";
+export { CartItemPrice } from "./CartItem/CartItemDetails/CartItemPrice";
+export { CartItemQuantity } from "./CartItem/CartItemDetails/CartItemQuantity";
+export { CartItemTitle } from "./CartItem/CartItemDetails/CartItemTitle";
+export { CartItemImage } from "./CartItem/CartItemImage";
 export { ProductDetails } from "./DetailsProduct/ProductDetails";
 export { ProductImage } from "./DetailsProduct/ProductImage";
 export { ProductNotFound } from "./DetailsProduct/ProductNotFound";

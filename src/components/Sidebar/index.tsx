@@ -8,11 +8,15 @@ export const Sidebar = () => {
     <aside
       className={`${
         isOpen ? "right-0" : "-right-full"
-      } w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}
+      } flex flex-col justify-between w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px] overflow-y-auto`}
     >
-      <HeaderSidebar />
-      <BodySidebar />
-      <FooterSidebar />
+      <div className="flex-1">
+        <HeaderSidebar />
+        <BodySidebar />
+      </div>
+      <div className="flex-initial">
+        <FooterSidebar />
+      </div>
     </aside>
   );
 };
